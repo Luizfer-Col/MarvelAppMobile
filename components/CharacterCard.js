@@ -1,18 +1,23 @@
 import * as React from 'react';
 import { Text, View,  Image, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function CharacterCard({image, name}) {
+	const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+			style={styles.container}
+			onPress={() => navigation.navigate('Detail')}
+	>
 			<Image 
 				style={styles.image}
 				source={image}
 			/>
       <Text style={styles.font}>{name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
-
 const styles = StyleSheet.create({
     container: {
       marginHorizontal:"5%",
