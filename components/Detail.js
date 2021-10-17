@@ -33,6 +33,7 @@ console.log(data);
     <Tab.Navigator
     initialRouteName="Information"
     screenOptions={{
+      headerShown: false,
       "tabBarActiveTintColor": "darkred",
       "tabBarStyle": [
         {
@@ -63,14 +64,22 @@ console.log(data);
       }
     </Tab.Screen>
     <Tab.Screen 
-      name="Comics" 
-      component={Comics} 
-      options={{
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="book" color={color} size={size} />
-        )
-      }}
-    />
+        name="Comics" 
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="book" color={color} size={size} />
+          )
+        }}
+      >
+        {() => 
+          (isLoading
+            ? <ActivityIndicator size="large" color="#00ff00" /> 
+            : <Comics
+                listComics={data?.comics?.items} 
+              />
+          )
+        }
+      </Tab.Screen>
   </Tab.Navigator>
   );
 }
