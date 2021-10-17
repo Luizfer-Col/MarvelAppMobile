@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     container: {
     //   marginHorizontal:5,
     width: ScreenWidth,
-    height:ScreenHeight,
+    // height:ScreenHeight,
     //   marginVertical: 3,
     //   display: 'flex',
     //   flexDirection:"row",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     //   margin: 10,
     //   borderRadius: 10,
       width: '100%', 
-      height: 600
+      height: 500
     },
     font:{
   
