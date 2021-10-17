@@ -28,12 +28,19 @@ useEffect(() => {
     .catch(error => console.error(error))
     .finally(() => setLoading(false));
 }, []);
-
+console.log(data);
   return (
     <Tab.Navigator
     initialRouteName="Information"
-    tabBarOptions={{
-      activeTintColor: 'darkred'
+    screenOptions={{
+      "tabBarActiveTintColor": "darkred",
+      "tabBarStyle": [
+        {
+          "display": "flex"
+        },
+        null
+      ]
+
     }}
   >
     <Tab.Screen 

@@ -13,7 +13,7 @@ export default function CharacterCard({id, image, name}) {
 	>
 			<Image 
 				style={styles.image}
-				source={image}
+				source={{uri: image}}
 			/>
       <Text style={styles.font}>{name}</Text>
     </TouchableOpacity>
@@ -27,15 +27,18 @@ const styles = StyleSheet.create({
       display: 'flex',
       flexDirection:"row",
       alignItems:'center',
-      backgroundColor: "red",
+      backgroundColor: "#C6C9D8",
       padding: 10,
       borderWidth: 3,
-      borderColor: "black",
+      borderColor: "#8084A2",
       borderRadius: 15
 
     },
     image:{
+      marginRight: 10,
       borderRadius: 10,
+      width: 50, 
+      height: 50
     },
     font:{
 
