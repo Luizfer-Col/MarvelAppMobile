@@ -3,12 +3,13 @@ import { Text, View,  Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function CharacterCard({image, name}) {
+export default function CharacterCard({id, image, name}) {
+  console.log(image);
 	const navigation = useNavigation();
   return (
     <TouchableOpacity 
 			style={styles.container}
-			onPress={() => navigation.navigate('Detail')}
+			onPress={() => navigation.navigate('Detail', {id: id})}
 	>
 			<Image 
 				style={styles.image}
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
 
     },
     image:{
-
+      borderRadius: 10,
     },
     font:{
 
